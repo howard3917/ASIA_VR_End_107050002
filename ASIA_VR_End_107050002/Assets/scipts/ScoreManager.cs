@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using static ScoreManager02;
 
 
 public class ScoreManager : MonoBehaviour
@@ -25,7 +26,7 @@ public class ScoreManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag =="paperball" && other.transform.position.y >1.0f)
+        if(other.tag =="paperball")
         {
             Addscore();
             Destroy(other);
@@ -43,7 +44,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (other.transform.root.name == "player")
         {
-            //玩家進入區域 將投進的分數改為五分
+            //玩家進離開區域 將投進的分數改為2分
             scoreIn = 2;
         }
     }
@@ -52,7 +53,7 @@ public class ScoreManager : MonoBehaviour
     {
         ///遞增+2
         score += scoreIn;
-        textScore01.text = "分數:" + score;
+        textScore01.text = "分數:" + score ;
         textScore02.text = "分數:" + score;
         aud.PlayOneShot(soundIn, Random.Range(0.3f, 0.8f));
     }

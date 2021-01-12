@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using static ScoreManager02;
+
 
 
 public class ScoreManager : MonoBehaviour

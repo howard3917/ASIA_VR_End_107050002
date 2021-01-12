@@ -11,7 +11,7 @@ public class ScoreManager02 : MonoBehaviour
     [Header("分數")]
     public int score01;
     [Header("投進的分數")]
-    public int scoreIn = 4;
+    static public int scoreIn = 1;
     [Header("進球音效")]
     public AudioClip soundIn;
 
@@ -23,6 +23,8 @@ public class ScoreManager02 : MonoBehaviour
         //音效來源 = 取得元件
         aud = GetComponent<AudioSource>();
     }
+
+
 
     private void OnTriggerEnter(Collider other)
     {
